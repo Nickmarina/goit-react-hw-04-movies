@@ -13,7 +13,7 @@ export const getTrendingMovies = () => {
 export const getSearchMovies = query => {
   return axios
     .get(`/search/movie?api_key=${apiKey}&query =${query}&page=1`)
-    .then(({ data }) => data)
+    .then(({ data }) => [...data])
     .catch(error => console.log(error));
 };
 
