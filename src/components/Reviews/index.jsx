@@ -18,14 +18,19 @@ const Reviews = () => {
   }, []);
 
   return (
-    <ul className={classes.list}>
-      {reviews.map(({ author, content, id }) => (
-        <li className={classes.item} key={id}>
-          <h3>Author: {author}</h3>
-          <p>{content}</p>
-        </li>
-      ))}
-    </ul>
+    <div>
+      {reviews.length === 0 && (
+        <p className={classes.noReviewText}>No reviews</p>
+      )}
+      <ul className={classes.list}>
+        {reviews.map(({ author, content, id }) => (
+          <li className={classes.item} key={id}>
+            <h3>Author: {author}</h3>
+            <p>{content}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

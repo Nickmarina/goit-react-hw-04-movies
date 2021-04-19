@@ -11,6 +11,10 @@ const useStyles = createUseStyles({
     marginBottom: 10,
     boxShadow: '0px 0px 11px -3px rgba(34, 60, 80, 0.37)',
   },
+  noReviewText: {
+    marginLeft: 30,
+    fontSize: 20,
+  },
 });
 
 export default useStyles;
