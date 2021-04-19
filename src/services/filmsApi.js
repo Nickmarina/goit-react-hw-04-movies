@@ -12,8 +12,10 @@ export const getTrendingMovies = () => {
 
 export const getSearchMovies = query => {
   return axios
-    .get(`/search/movie?api_key=${apiKey}&query =${query}&page=1`)
-    .then(({ data }) => [...data])
+    .get(
+      `/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=1&include_adult=false`,
+    )
+    .then(({ data }) => data.results)
     .catch(error => console.log(error));
 };
 

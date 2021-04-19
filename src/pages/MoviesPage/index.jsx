@@ -7,20 +7,20 @@ const MoviesPage = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
-  const handleQuery = input => {
-    setQuery(input);
+  const HandleChangeQuery = newQuery => {
+    setQuery(newQuery);
+    setMovies([]);
   };
+
   useEffect(() => {
     if (!query) return;
-    console.log(query);
-    console.log(movies);
-    getSearchMovies(query).then(data => setMovies(data));
+    getSearchMovies(query).then(results => setMovies(results));
   }, [query]);
 
   return (
     <div>
-      <MoviesSearch onChange={handleQuery} />
-      {/* <MoviesList movies={movies} /> */}
+      <MoviesSearch onChangeQuery={HandleChangeQuery} />
+      <MoviesList movies={movies} />
     </div>
   );
 };
