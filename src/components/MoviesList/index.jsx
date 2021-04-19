@@ -6,9 +6,7 @@ const MoviesList = ({ movies }) => {
   const classes = useStyles();
   const location = useLocation();
   const baseUrl = 'https://image.tmdb.org/t/p/w500';
-  {
-    movies.map(movie => console.log(movie));
-  }
+
   return (
     <ul className={classes.list}>
       {movies.map(({ id, original_title, original_name, poster_path }) => (
