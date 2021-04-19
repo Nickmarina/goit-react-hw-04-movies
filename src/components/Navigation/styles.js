@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     padding: 0,
     marginRight: 15,
     fontSize: 20,
-    color: 'gray',
+    color: 'white',
     textDecoration: 'none',
   },
   linkActive: {

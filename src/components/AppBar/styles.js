@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  form: {
+  searchbar: {
     top: 0,
     left: 0,
     position: 'sticky',
@@ -9,18 +9,13 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 25,
-  },
-
-  input: {
-    padding: 10,
-    marginRight: 15,
-    fontSize: 15,
-  },
-
-  btn: {
-    padding: 5,
+    minHeight: 64,
+    paddingRight: 24,
+    paddingLeft: 24,
+    paddingTop: 12,
+    paddingBottom: 12,
+    color: '#fff',
+    backgroundColor: 'slategrey',
   },
 });
-
 export default useStyles;
