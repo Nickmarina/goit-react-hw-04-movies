@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import useStyles from './styles';
 
 const MovieSearch = ({ onChangeQuery }) => {
+  const classes = useStyles();
   const [value, setValue] = useState('');
 
   const HandleChangeValue = e => {
@@ -14,8 +16,9 @@ const MovieSearch = ({ onChangeQuery }) => {
   };
 
   return (
-    <form onSubmit={HandleSubmit}>
+    <form className={classes.form} onSubmit={HandleSubmit}>
       <input
+        className={classes.input}
         value={value}
         type="text"
         autoComplete="off"
@@ -23,7 +26,7 @@ const MovieSearch = ({ onChangeQuery }) => {
         placeholder="Search movies "
         onChange={HandleChangeValue}
       />
-      <button type="submit">
+      <button className={classes.btn} type="submit">
         <span>Search</span>
       </button>
     </form>

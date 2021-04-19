@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { getMovie } from '../../services/filmsApi';
 import MovieCard from '../../components/MovieCard';
 import AdditionalInformation from '../../components/AdditionalInformation';
@@ -13,6 +13,7 @@ const MoviePage = () => {
   }, []);
   return (
     <div>
+      <button type="button">Go back</button>
       <MovieCard movie={movie} />
       <AdditionalInformation id={match.params.id} />
     </div>

@@ -15,6 +15,8 @@ export const pathes = {
   home: '/',
   movies: '/movies',
   movie: '/movies/:id',
+  cast: '/movies/:movieId/cast',
+  reviews: '/movies/:movieId/reviews',
 };
 
 export const routes = [

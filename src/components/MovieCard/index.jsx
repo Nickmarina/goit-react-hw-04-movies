@@ -1,24 +1,34 @@
 import PropTypes from 'prop-types';
+import useStyles from './styles';
+
 const MovieCard = ({ movie }) => {
+  const classes = useStyles();
   // console.log(movie);
   const { genres, original_title, overview, poster_path, release_date } = movie;
   const url = `https://themoviedb.org/t/p/w500/${poster_path}`;
   return (
-    <div>
-      <img src={url}></img>
-      <h2>{original_title}</h2>
-      <p> user score</p>
-      <h3>Owerview</h3>
-      <p>{overview}</p>
-      <ul>
-        <h3> Genres</h3>
-        {genres && genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
-      </ul>
+    <div className={classes.cardContainer}>
+      {poster_path && <img className={classes.poster} src={url}></img>}
+      <div className={classes.descriptionContainer}>
+        <h2 className={classes.title}>{original_title}</h2>
+        <h3>User Score: %</h3>
+        <h4 className={classes.overviewTitle}> Overview</h4>
+        <p className={classes.overview}>{overview}</p>
+        <h5 className={classes.listTitle}> Genres</h5>
+        <ul className={classes.genresList}>
+          {genres &&
+            genres.map(genre => (
+              <li className={classes.listItem} key={genre.id}>
+                {genre.name}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
 MovieCard.propTypes = {
-  movies: PropTypes.object.isRequired,
+  movie: PropTypes.object.isRequired,
 };
 export default MovieCard;
