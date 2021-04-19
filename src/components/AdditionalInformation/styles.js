@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import { nominalTypeHack } from 'prop-types';
 
 const useStyles = createUseStyles({
   link: {

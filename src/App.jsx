@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { routes } from './services/routes';
 import AppBar from './components/AppBar';
-// import Page404 from './pages/Page404';
 
 const App = () => {
   return (

@@ -10,6 +10,9 @@ const MoviesPage = lazy(
 const MoviePage = lazy(
   () => import('../pages/MoviePage') /* webpackChunkName: "MoviePage" */,
 );
+const Page404 = lazy(() =>
+  import('../pages/Page404' /* webpackChunkName: "Page404" */),
+);
 
 export const pathes = {
   home: '/',
@@ -38,5 +41,9 @@ export const routes = [
     path: `${pathes.movie}`,
     label: 'Movie Page',
     component: MoviePage,
+  },
+
+  {
+    component: Page404,
   },
 ];
