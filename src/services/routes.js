@@ -1,14 +1,14 @@
 import { lazy } from 'react';
 const HomePage = lazy(
-  () => import('./pages/HomePage') /* webpackChunkName: "HomePage" */,
+  () => import('../pages/HomePage') /* webpackChunkName: "HomePage" */,
 );
 
 const MoviesPage = lazy(
-  () => import('./pages/MoviesPage') /* webpackChunkName: "MoviesPage" */,
+  () => import('../pages/MoviesPage') /* webpackChunkName: "MoviesPage" */,
 );
 
 const MoviePage = lazy(
-  () => import('./pages/MoviePage') /* webpackChunkName: "MoviePage" */,
+  () => import('../pages/MoviePage') /* webpackChunkName: "MoviePage" */,
 );
 
 export const pathes = {

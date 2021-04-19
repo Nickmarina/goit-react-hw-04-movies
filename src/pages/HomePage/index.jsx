@@ -3,7 +3,6 @@ import { getTrendingMovies } from '../../services/filmsApi';
 import MoviesList from '../../components/MoviesList';
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
-
   useEffect(() => {
     getTrendingMovies().then(data => setMovies(data));
   });

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { pathes } from '../../routes';
+import { pathes } from '../../services/routes';
 import useStyles from './styles';
 
 const Navigation = () => {

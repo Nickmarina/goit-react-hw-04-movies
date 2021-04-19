@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const MovieSearch = ({ onChangeQuery }) => {
   const [value, setValue] = useState('');
@@ -19,7 +20,7 @@ const MovieSearch = ({ onChangeQuery }) => {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Search movies"
+        placeholder="Search movies "
         onChange={HandleChangeValue}
       />
       <button type="submit">
@@ -27,5 +28,9 @@ const MovieSearch = ({ onChangeQuery }) => {
       </button>
     </form>
   );
+};
+
+MovieSearch.propTypes = {
+  onChangeQuery: PropTypes.func.isRequired,
 };
 export default MovieSearch;
