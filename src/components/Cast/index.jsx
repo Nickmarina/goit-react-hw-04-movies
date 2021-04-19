@@ -1,9 +1,10 @@
 import { useRouteMatch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieCast } from '../../services/filmsApi';
+import useStyles from './styles';
 
-// character name profile_path
 const Cast = () => {
+  const classes = useStyles();
   const [actors, setActors] = useState([]);
   const match = useRouteMatch();
   const baseUrl = 'https://image.tmdb.org/t/p/w500';
@@ -13,9 +14,9 @@ const Cast = () => {
   }, []);
 
   return (
-    <ul>
+    <ul className={classes.list}>
       {actors.map(({ character, name, profile_path, id }) => (
-        <li key={id}>
+        <li className={classes.item} key={id}>
           {profile_path && (
             <img src={baseUrl + profile_path} alt={name} width="150" />
           )}

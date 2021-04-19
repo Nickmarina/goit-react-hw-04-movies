@@ -3,6 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { getMovie } from '../../services/filmsApi';
 import MovieCard from '../../components/MovieCard';
 import AdditionalInformation from '../../components/AdditionalInformation';
+import GoBackBtn from '../../components/GoBackBtn';
 
 const MoviePage = () => {
   const [movie, setMovie] = useState({});
@@ -13,7 +14,7 @@ const MoviePage = () => {
   }, []);
   return (
     <div>
-      <button type="button">Go back</button>
+      <GoBackBtn />
       <MovieCard movie={movie} />
       <AdditionalInformation id={match.params.id} />
     </div>

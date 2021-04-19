@@ -20,6 +20,9 @@ const useStyles = createUseStyles({
     marginBottom: 30,
     fontSize: 40,
   },
+  score: {
+    color: 'gray',
+  },
   overviewTitle: {
     padding: 0,
     margin: 0,
