@@ -9,23 +9,26 @@ const MoviesList = ({ movies }) => {
 
   return (
     <ul className={classes.list}>
-      {movies.map(({ id, original_title, original_name, poster_path }) => (
-        <li className={classes.item} key={id}>
-          <Link
-            to={{
-              pathname: `/movies/${id}`,
-              state: { from: location },
-            }}
-          >
-            <h3 className={classes.title}>{original_title || original_name}</h3>
-            <img
-              className={classes.img}
-              src={baseUrl + poster_path}
-              alt={original_title}
-            />
-          </Link>
-        </li>
-      ))}
+      {movies &&
+        movies.map(({ id, original_title, original_name, poster_path }) => (
+          <li className={classes.item} key={id}>
+            <Link
+              to={{
+                pathname: `/movies/${id}`,
+                state: { from: location },
+              }}
+            >
+              <h3 className={classes.title}>
+                {original_title || original_name}
+              </h3>
+              <img
+                className={classes.img}
+                src={baseUrl + poster_path}
+                alt={original_title}
+              />
+            </Link>
+          </li>
+        ))}
     </ul>
   );
 };

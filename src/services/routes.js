@@ -18,8 +18,8 @@ export const pathes = {
   home: '/',
   movies: '/movies',
   movie: '/movies/:id',
-  cast: '/movies/:movieId/cast',
-  reviews: '/movies/:movieId/reviews',
+  cast: '/movies/:id/cast',
+  reviews: '/movies/:id/reviews',
 };
 
 export const routes = [

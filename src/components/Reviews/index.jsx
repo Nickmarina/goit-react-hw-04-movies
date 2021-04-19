@@ -7,7 +7,7 @@ const Reviews = () => {
   const classes = useStyles();
   const [reviews, setReviews] = useState([]);
   const match = useRouteMatch();
-  const id = match.params.movieId;
+  const id = match.params.id;
 
   useEffect(() => {
     getMovieReview(id).then(data => setReviews(data.results));

@@ -7,7 +7,7 @@ const Cast = () => {
   const classes = useStyles();
   const [actors, setActors] = useState([]);
   const match = useRouteMatch();
-  const id = match.params.movieId;
+  const id = match.params.id;
   const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
   useEffect(() => {
