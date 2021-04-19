@@ -1,30 +1,46 @@
+// import { useState, useEffect, useRef } from 'react';
+// import { useLocation, useHistory } from 'react-router-dom';
+// import queryString from 'query-string';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import useStyles from './styles';
 
 const MovieSearch = ({ onChangeQuery }) => {
   const classes = useStyles();
-  const [value, setValue] = useState('');
+  const [query, setQuery] = useState('');
+  // const location = useLocation();
+  // const history = useHistory();
+  // const initialQueryString = queryString.parse(location.search);
+  // const [query, setQuery] = useState(initialQueryString.query || '');
+  // const inputRef = useRef();
 
-  const HandleChangeValue = e => {
-    setValue(e.currentTarget.value);
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // }, []);
+
+  const HandleChangeQuery = e => {
+    setQuery(e.currentTarget.value);
+    // history.push({
+    //   ...location,
+    //   search: `query=${e.target.value}`,
+    // });
   };
   const HandleSubmit = e => {
     e.preventDefault();
-    onChangeQuery(value);
-    setValue('');
+    onChangeQuery(query);
+    setQuery('');
   };
 
   return (
     <form className={classes.form} onSubmit={HandleSubmit}>
       <input
         className={classes.input}
-        value={value}
+        value={query}
         type="text"
         autoComplete="off"
         autoFocus
         placeholder="Search movies "
-        onChange={HandleChangeValue}
+        onChange={HandleChangeQuery}
       />
       <button className={classes.btn} type="submit">
         <span>Search</span>

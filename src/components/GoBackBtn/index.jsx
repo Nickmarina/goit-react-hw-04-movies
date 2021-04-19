@@ -1,17 +1,14 @@
 import { useHistory, useLocation } from 'react-router-dom';
+import { pathes } from '../../services/routes';
 import useStyles from './styles';
 
 const GoBackBtn = () => {
   const classes = useStyles();
-  const location = useLocation();
-  const history = useHistory();
-  console.log(location);
-  console.log(history);
+  const { state } = useLocation();
+  const { push } = useHistory();
 
   const HandleBtnClick = () => {
-    location.state?.from
-      ? history.push(location.state.from)
-      : history.push('/movies');
+    state?.from ? push(state.from) : push(pathes.home);
   };
 
   return (
