@@ -7,9 +7,14 @@ const Reviews = () => {
   const classes = useStyles();
   const [reviews, setReviews] = useState([]);
   const match = useRouteMatch();
+  const id = match.params.movieId;
 
   useEffect(() => {
-    getMovieReview(match.params.movieId).then(data => setReviews(data.results));
+    getMovieReview(id).then(data => setReviews(data.results));
+  }, [id]);
+
+  useEffect(() => {
+    return () => console.log('WillUnmout');
   }, []);
 
   return (

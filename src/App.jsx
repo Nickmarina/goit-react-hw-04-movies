@@ -10,8 +10,8 @@ const App = () => {
 
       <Suspense fallback={<p>Loading...</p>}>
         <Switch>
-          {routes.map(({ path, exact, component: Component }) => (
-            <Route key={path} path={path} exact={exact} component={Component} />
+          {routes.map(({ key, path, exact, component: Component }) => (
+            <Route key={key} path={path} exact={exact} component={Component} />
           ))}
         </Switch>
       </Suspense>

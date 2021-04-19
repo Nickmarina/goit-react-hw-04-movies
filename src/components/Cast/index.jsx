@@ -7,10 +7,15 @@ const Cast = () => {
   const classes = useStyles();
   const [actors, setActors] = useState([]);
   const match = useRouteMatch();
+  const id = match.params.movieId;
   const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
   useEffect(() => {
-    getMovieCast(match.params.movieId).then(data => setActors(data.cast));
+    getMovieCast(id).then(data => setActors(data.cast));
+  }, [id]);
+
+  useEffect(() => {
+    return () => console.log('WillUnmout');
   }, []);
 
   return (

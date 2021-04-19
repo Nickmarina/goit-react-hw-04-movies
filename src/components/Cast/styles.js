@@ -6,7 +6,6 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     flexWrap: 'wrap',
     listStyle: 'none',
-    padding: 0,
     margin: 0,
     padding: 15,
   },

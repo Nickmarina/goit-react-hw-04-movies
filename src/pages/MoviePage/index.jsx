@@ -8,15 +8,20 @@ import GoBackBtn from '../../components/GoBackBtn';
 const MoviePage = () => {
   const [movie, setMovie] = useState({});
   const match = useRouteMatch();
-  // match.params.id;
+  const id = match.params.id;
   useEffect(() => {
-    getMovie(match.params.id).then(data => setMovie(data));
+    getMovie(id).then(data => setMovie(data));
+  }, [id]);
+
+  useEffect(() => {
+    return () => console.log('WillUnmout');
   }, []);
+
   return (
     <div>
       <GoBackBtn />
       <MovieCard movie={movie} />
-      <AdditionalInformation id={match.params.id} />
+      <AdditionalInformation id={id} />
     </div>
   );
 };

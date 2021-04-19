@@ -2,7 +2,6 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   list: {
-    padding: 0,
     margin: 0,
     padding: 15,
   },

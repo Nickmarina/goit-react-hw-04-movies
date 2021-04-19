@@ -2,7 +2,6 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   btn: {
-    padding: 0,
     margin: 0,
     marginTop: 20,
     marginLeft: 30,

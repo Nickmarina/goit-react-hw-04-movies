@@ -8,7 +8,9 @@ const MovieCard = ({ movie }) => {
   const url = `https://themoviedb.org/t/p/w500/${poster_path}`;
   return (
     <div className={classes.cardContainer}>
-      {poster_path && <img className={classes.poster} src={url}></img>}
+      {poster_path && (
+        <img className={classes.poster} alt={original_title} src={url}></img>
+      )}
       <div className={classes.descriptionContainer}>
         <h2 className={classes.title}>{original_title}</h2>
         <h3 className={classes.score}>User Score: {vote_average}</h3>

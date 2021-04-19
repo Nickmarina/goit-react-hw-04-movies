@@ -5,7 +5,12 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     getTrendingMovies().then(data => setMovies(data));
-  });
+  }, []);
+
+  useEffect(() => {
+    return () => console.log('WillUnmout');
+  }, []);
+
   return (
     <div>
       <h2>Trending today</h2>

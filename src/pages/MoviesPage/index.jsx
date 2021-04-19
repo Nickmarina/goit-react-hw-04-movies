@@ -17,6 +17,10 @@ const MoviesPage = () => {
     getSearchMovies(query).then(results => setMovies(results));
   }, [query]);
 
+  useEffect(() => {
+    return () => console.log('WillUnmout');
+  }, []);
+
   return (
     <div>
       <MoviesSearch onChangeQuery={HandleChangeQuery} />

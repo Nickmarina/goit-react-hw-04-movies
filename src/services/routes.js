@@ -29,6 +29,7 @@ export const routes = [
     component: HomePage,
     exact: true,
     showInMenu: true,
+    key: `${pathes.home}`,
   },
   {
     path: `${pathes.movies}`,
@@ -36,14 +37,17 @@ export const routes = [
     component: MoviesPage,
     exact: true,
     showInMenu: true,
+    key: `${pathes.movies}`,
   },
   {
     path: `${pathes.movie}`,
     label: 'Movie Page',
     component: MoviePage,
+    key: `${pathes.movie}`,
   },
 
   {
     component: Page404,
+    key: 'page404',
   },
 ];

@@ -127,3 +127,5 @@ yarn-debug.log*
 yarn-error.log*
 
 src/services/apiKey.js
+# Local Netlify folder
+.netlify
