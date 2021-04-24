@@ -7,31 +7,30 @@ import useStyles from './styles';
 
 const MovieSearch = ({ onChangeQuery }) => {
   const classes = useStyles();
-  const [query, setQuery] = useState('');
   const location = useLocation();
   const history = useHistory();
   const initialQueryState = queryString.parse(location.search);
+  const [query, setQuery] = useState(initialQueryState.query || '');
 
   const HandleChangeQuery = e => {
     setQuery(e.currentTarget.value);
   };
 
   const HandleSubmit = e => {
-    e.preventDefault();
-    onChangeQuery(query);
-    setQuery('');
-  };
-
-  useEffect(() => {
+    if (e) e.preventDefault();
     if (query) {
       history.push({
         ...location,
         search: `?query=${query}`,
       });
     }
+    onChangeQuery(query);
+    setQuery('');
+  };
 
-    onChangeQuery(initialQueryState.query);
-  }, [query]);
+  useEffect(() => {
+    HandleSubmit();
+  }, []);
 
   return (
     <form className={classes.form} onSubmit={HandleSubmit}>
